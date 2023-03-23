@@ -4,4 +4,10 @@
     <string name="name_prompt_text">Enter your name: </string>
     <string name="name_input_hint" />
     <string name="start_button_text">Start</string>
+    <string name="welcome_message">Welcome</string>
+    <string name="question_number">1/5</string>
+    <string name="question_title">Android Question Title</string>
+    <string name="question_text">Question details go here</string>
+    <string name="quiz_button_transition_text"> Submit </string>
+
 </resources>
