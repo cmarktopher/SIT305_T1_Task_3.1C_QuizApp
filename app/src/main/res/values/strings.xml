@@ -9,5 +9,6 @@
     <string name="question_title">Android Question Title</string>
     <string name="question_text">Question details go here</string>
     <string name="quiz_button_transition_text"> Submit </string>
+    <string name="nameIntentData">name</string>
 
 </resources>
