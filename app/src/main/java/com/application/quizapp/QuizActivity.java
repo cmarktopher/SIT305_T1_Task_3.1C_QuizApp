@@ -4,15 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -32,11 +29,13 @@ public class QuizActivity extends AppCompatActivity {
     private TextView questionText;
     private LinearLayout answerButtonLayout;
     private Button quizProgressionButton;
-
     private ArrayList<Button> answerButtons = new ArrayList<>();
 
     // Quiz Handler
     IQuizHandler quizHandler;
+
+    // Name
+    String name;
 
     // Answer tracking
     Integer answerIndexSelection;
@@ -58,7 +57,7 @@ public class QuizActivity extends AppCompatActivity {
         questionTitle = findViewById(R.id.questionTitle);
         questionText = findViewById(R.id.questionText);
         answerButtonLayout = findViewById(R.id.answerButtonLayout);
-        quizProgressionButton = findViewById(R.id.progressButton);
+        quizProgressionButton = findViewById(R.id.new_quiz_button);
 
         // Create our quiz handler
         quizHandler = new ClassBasedQuizProcessor();
@@ -67,7 +66,8 @@ public class QuizActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
         // Set the welcome message
-        welcomeTextElement.setText("Welcome " + intent.getStringExtra(getString(R.string.nameIntentData)) + "!");
+        name = intent.getStringExtra(getString(R.string.nameIntentData));
+        welcomeTextElement.setText("Welcome " + name + "!");
 
         // Set the initial question
         SetNewQuestion();
@@ -119,12 +119,25 @@ public class QuizActivity extends AppCompatActivity {
 
                         if (quizHandler.GoToNextQuestion() == true){
 
+                            quizProgressionButton.setText("Submit");
+
                             // If true, then we have more questions and should set a new question
                             SetNewQuestion();
                             currentQuizState = QuizState.SELECTION;
+
                         }else{
 
                             // If false, we have no more questions and therefore can go to the third activity to display results
+                            Intent intent = new Intent(getApplicationContext(), FinishActivity.class);
+
+                            intent.putExtra(getString(R.string.nameIntentData), name);
+
+                            Integer numberOfQuestions = quizHandler.GetMaxQuestionsCount();
+                            intent.putExtra(getString(R.string.scoreIntentData), correctAnswers.toString() + "/" + numberOfQuestions.toString());
+
+                            startActivity(intent);
+
+                            finish();
                         }
 
                         break;

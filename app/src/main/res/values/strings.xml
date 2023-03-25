@@ -10,5 +10,11 @@
     <string name="question_text">Question details go here</string>
     <string name="quiz_button_transition_text"> Submit </string>
     <string name="nameIntentData">name</string>
+    <string name="scoreIntentData">score</string>
+    <string name="final_screen_text">Congratulations your name!</string>
+    <string name="score_label">YOUR SCORE:</string>
+    <string name="score_value"> 4/5 </string>
+    <string name="take_new_quiz_button_text"> Take New Quiz </string>
+    <string name="finish_button_text">Finish</string>
 
 </resources>
