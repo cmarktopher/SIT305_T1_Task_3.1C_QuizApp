@@ -10,4 +10,6 @@
     <color name="light_grey">#CFCFCF</color>
     <color name="mid_grey">#8F8F8F</color>
     <color name="dark_grey">#444444</color>
+    <color name="correct_answer_color">#0AEC5D</color>
+    <color name="incorrect_answer_color">#E71809</color>
 </resources>

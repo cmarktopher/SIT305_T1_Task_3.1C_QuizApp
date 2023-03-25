@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+/**
+ * This activity is the entry view where the user can enter their name.
+ */
 public class MainActivity extends AppCompatActivity {
 
     private Button startQuizButtonElement;
@@ -31,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), QuizActivity.class);
                 intent.putExtra(getString(R.string.nameIntentData), nameInputTextElement.getText().toString());
                 startActivity(intent);
+                finish();
             }
         });
     }

@@ -15,7 +15,7 @@
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="200dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/submitButton"
+        app:layout_constraintBottom_toTopOf="@+id/progressButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -88,6 +88,7 @@
             android:layout_margin="50dp">
 
             <LinearLayout
+                android:id="@+id/answerButtonLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"/>
@@ -97,7 +98,7 @@
     </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/submitButton"
+        android:id="@+id/progressButton"
         android:textColor="@color/dark_grey"
         android:backgroundTint="@color/light_grey"
         android:layout_width="0dp"
