@@ -53,14 +53,14 @@ public class ClassBasedQuizProcessor implements IQuizHandler {
         quizQuestions = new ArrayList<>(Arrays.asList(
 
                 new Quiz("Select One Option: ",
-                        "What is the color of the sky?",
-                        new ArrayList<>(Arrays.asList("Blue", "Green", "Pink", "Yellow")),
-                        0
+                        "Which one of these options are game engines?",
+                        new ArrayList<>(Arrays.asList("SFML", "Monogame", "Unity", "SDL2")),
+                        2
                 ),
                 new Quiz("Select One Option ",
-                        "Does a cat woof?",
-                        new ArrayList<>(Arrays.asList("Yes", "No")),
-                        1
+                        "Does Blueprints belong to Unity or Unreal Engine",
+                        new ArrayList<>(Arrays.asList("Unreal Engine", "Unity")),
+                        0
                 ),
                 new Quiz("Select One Option ",
                         "What programming language does Unreal Engine use?",
