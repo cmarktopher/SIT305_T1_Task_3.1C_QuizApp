@@ -200,17 +200,22 @@ public class QuizActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
 
-                    // When clicked, we want to reset the color of all buttons as well
-                    for (int j = 0; j < answerButtons.size(); j++) {
+                    // Added this in after realizing I can select options while the answer is shown.
+                    if (currentQuizState == QuizState.SELECTION){
 
-                        answerButtons.get(j).setBackgroundColor(getResources().getColor(R.color.light_grey));
+                        // When clicked, we want to reset the color of all buttons as well
+                        for (int j = 0; j < answerButtons.size(); j++) {
+
+                            answerButtons.get(j).setBackgroundColor(getResources().getColor(R.color.light_grey));
+                        }
+
+                        // Change color to indicate it has been selected
+                        answerButton.setBackgroundColor(getResources().getColor(R.color.dark_grey));
+
+                        // Keep track of what was selected
+                        answerIndexSelection = answerButtons.indexOf(view);
                     }
 
-                    // Change color to indicate it has been selected
-                    answerButton.setBackgroundColor(getResources().getColor(R.color.dark_grey));
-
-                    // Keep track of what was selected
-                    answerIndexSelection = answerButtons.indexOf(view);
 
                 }
             });
